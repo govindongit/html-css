@@ -1,0 +1,41 @@
+<!-- 
+Accessibility (ARIA) in HTML?
+Explanation:
+ARIA = Accessible Rich Internet Applications; helps screen readers. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ARIA Example</title>
+    <style>
+      .content {
+        display: none;
+      }
+      .content[aria-hidden="false"] {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleButton" aria-expanded="false" aria-controls="infoSection">
+      Show Info
+    </button>
+
+    <div id="infoSection" class="content" aria-hidden="true">
+      <p>This is additional information now visible!</p>
+    </div>
+
+    <script>
+      const button = document.getElementById("toggleButton");
+      const section = document.getElementById("infoSection");
+
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", !expanded);
+        section.setAttribute("aria-hidden", expanded);
+      });
+    </script>
+  </body>
+</html>

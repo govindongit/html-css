@@ -1,0 +1,33 @@
+<!-- 
+Difference between defer and async in script loading?
+
+Explanation:
+
+async: script loads independently and executes as soon as it's ready. ---- Use async for third-party or standalone scripts (e.g., Google Analytics).
+
+defer: script loads in parallel but executes after HTML is parsed. ---- Use defer for scripts that need to manipulate or interact with the DOM.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Script Loading Demo</title>
+
+    <!-- Blocking script (executes immediately and blocks HTML parsing) -->
+    <script>
+      console.log("🔥 Inline script: Blocking - executes immediately");
+    </script>
+
+    <!-- Async script (downloads in parallel, executes as soon as it's ready) -->
+    <script src="js/async-script.js" async></script>
+
+    <!-- Defer script (downloads in parallel, executes in order after DOM is parsed) -->
+    <script src="js/defer-script1.js" defer></script>
+    <script src="js/defer-script2.js" defer></script>
+  </head>
+  <body>
+    <h1>Script Loading Demo</h1>
+    <p>Check the browser console to see the script execution order.</p>
+  </body>
+</html>

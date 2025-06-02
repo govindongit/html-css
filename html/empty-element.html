@@ -1,0 +1,45 @@
+<!-- Void/Empty elements don’t have closing tags -->
+<!-- 
+Inside <head>: meta, link, base
+Inside <body>: hr, img, br, input, area, col, embed, source, track, wbr
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Example of all HTML void elements" />
+    <title>Void Elements Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <base href="https://example.com/" />
+  </head>
+  <body>
+    <hr />
+
+    <img src="image.jpg" alt="Example image" />
+
+    <br />
+
+    <input type="text" placeholder="Enter text" />
+
+    <input type="checkbox" />
+
+    <area
+      shape="rect"
+      coords="34,44,270,350"
+      alt="Example"
+      href="example.html"
+    />
+
+    <col span="2" style="background-color: lightgray" />
+
+    <embed src="video.mp4" type="video/mp4" />
+
+    <source src="movie.mp4" type="video/mp4" />
+
+    <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" />
+
+    <wbr />
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!-- HTML5 introduced built-in form validation that allows you to validate form fields without JavaScript. 
+ The browser automatically checks for constraints like required fields, email formats, numbers, length, etc., before submitting the form. -->
+<!-- 
+Here's a complete HTML5 form example that includes all the major built-in validations, including:
+
+✅ required
+✅ type (email, number, etc.)
+✅ min, max, minlength, maxlength
+✅ pattern (custom regex)
+✅ step (for number/date input) 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Complete HTML5 Form Validation Example</title>
+  </head>
+  <body>
+    <h2>User Registration Form</h2>
+    <form action="submit-form.php" method="post">
+      <!-- Name: required, letters only -->
+      <label for="name">Full Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        pattern="^[a-zA-Z\s]+$"
+        title="Letters and spaces only"
+        required
+      /><br /><br />
+
+      <!-- Email: required, type=email -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <!-- Password: minlength, maxlength -->
+      <label for="password">Password (6–12 chars):</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="6"
+        maxlength="12"
+        required
+      /><br /><br />
+
+      <!-- Phone: pattern for 10 digits -->
+      <label for="phone">Phone Number (10 digits):</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="^\d{10}$"
+        title="Enter exactly 10 digits"
+        required
+      /><br /><br />
+
+      <!-- Age: number, min and max -->
+      <label for="age">Age (18–60):</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        min="18"
+        max="60"
+        required
+      /><br /><br />
+
+      <!-- Website: type=url -->
+      <label for="website">Website:</label>
+      <input
+        type="url"
+        id="website"
+        name="website"
+        placeholder="https://example.com"
+      /><br /><br />
+
+      <!-- ZIP Code: exactly 5 digits -->
+      <label for="zip">ZIP Code:</label>
+      <input
+        type="text"
+        id="zip"
+        name="zip"
+        pattern="^\d{5}$"
+        title="5 digit ZIP code"
+        required
+      /><br /><br />
+
+      <!-- Quantity: step of 5 -->
+      <label for="quantity">Quantity (multiples of 5):</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="5"
+        max="100"
+        step="5"
+        required
+      /><br /><br />
+
+      <!-- Weight: step of 0.5 -->
+      <label for="weight">Weight (kg, steps of 0.5):</label>
+      <input
+        type="number"
+        id="weight"
+        name="weight"
+        min="0"
+        max="100"
+        step="0.5"
+        required
+      /><br /><br />
+
+      <!-- Date of Birth: required -->
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required /><br /><br />
+
+      <!-- Submit button -->
+      <input type="submit" value="Register" />
+    </form>
+  </body>
+</html>

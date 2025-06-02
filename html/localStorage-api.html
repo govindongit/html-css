@@ -1,0 +1,31 @@
+<!-- Store key–value pairs in the browser, even after the page reloads. No database needed. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Local Storage Example</title>
+  </head>
+  <body>
+    <h2>Save Your Name</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <button onclick="saveName()">Save</button>
+    <button onclick="showName()">Show Saved Name</button>
+    <p id="output"></p>
+
+    <script>
+      function saveName() {
+        const name = document.getElementById("nameInput").value;
+        localStorage.setItem("userName", name);
+        alert("Name saved!");
+      }
+
+      function showName() {
+        const saved = localStorage.getItem("userName");
+        document.getElementById("output").textContent = saved
+          ? `Saved name: ${saved}`
+          : "No name saved.";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!-- Semantic elements clearly describe their meaning. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic HTML Example</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      header,
+      nav,
+      main,
+      section,
+      article,
+      aside,
+      footer {
+        border: 1px solid blue;
+        padding: 5px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Web Title</h1>
+      <p>This is a Sementic Element Page</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h2>This is a section inside the "main" Element</h2>
+        <article>
+          <h3>this is inside the "article" Element</h3>
+          <p>
+            This is inside the "time" Element -
+            <time datetime="25-06-02"> June 2, 2025</time>
+          </p>
+          <figure>
+            <img
+              src="semantic-diagram.png"
+              alt="Semantic structure diagram"
+              width="300"
+            />
+            <figcaption>Inside the "figcaption"</figcaption>
+          </figure>
+        </article>
+      </section>
+      <aside>
+        <h4>Sidebar Info Inside the "aside" Element</h4>
+      </aside>
+    </main>
+    <footer>This is inside the "footer" Element</footer>
+  </body>
+</html>
