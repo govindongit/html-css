@@ -1,0 +1,206 @@
+<!-- 
+create a dropdown list in HTML?
+✅ Explanation:
+A dropdown list is created using the <select> and <option> tags.  
+-->
+
+<!-- 
+ make a form field read-only or disabled
+-->
+
+<!-- 
+the different types of input fields in HTML5?
+✅ Explanation:
+HTML5 introduced new input types for better validation and user experience.
+-->
+
+<!-- 
+group form elements semantically?
+✅ Explanation:
+Use <fieldset> to group related fields and <legend> to describe the group.
+-->
+
+<!-- 
+the use of the <noscript> tag?
+✅ Explanation:
+Displays fallback content if JavaScript is disabled.
+-->
+
+<!-- 
+embed a PDF in HTML?
+✅ Explanation:
+Use <embed> or <iframe> with the appropriate file type.
+-->
+
+<!-- 
+add tooltips in HTML?
+✅ Explanation:
+Use the title attribute to show tooltip text on hover.
+-->
+
+<!-- 
+preload resources in HTML?
+✅ Explanation:
+<link rel="preload"> hints the browser to fetch resources early to improve performance.
+Improved page load time; no visual output.
+-->
+
+<!-- 
+the sandbox attribute in <iframe>?
+✅ Explanation:
+Restricts iframe’s actions like form submission, scripts, and more. Improves security.
+-->
+
+<!-- 
+Make responsive images using srcset and sizes?
+✅ Explanation:
+srcset loads different images based on screen size for better performance.
+-->
+
+<!-- 
+the purpose of the <template> tag?
+✅ Explanation:
+Used to define reusable markup fragments that aren’t rendered unless used via JavaScript.
+-->
+
+<!-- 
+What is Lazy Loading in HTML?
+✅ Explanation:
+loading="lazy" delays loading of images until they enter the viewport.
+Image loads only when scrolled into view.
+-->
+
+<!-- 
+What are Custom Elements (Web Components)?
+✅ Explanation:
+Define your own HTML tags using customElements.define().
+-->
+
+<!-- 
+the hidden and aria-hidden attribute work?
+✅ Explanation:
+hidden: Hides the element from visual and screen readers.
+aria-hidden="true": Keeps element visible but hidden from screen readers.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second round</title>
+    <!-- preload: Improved page load time; no visual output.  -->
+    <link rel="preload" href="style.css" as="style" />
+  </head>
+  <body>
+    <section>
+      <div>
+        <label for="cars">Choose a car using the dropdown:</label>
+        <select id="cars" name="cars">
+          <option value="audi">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="tesla">Tesla</option>
+        </select>
+      </div>
+      <hr />
+      <div>
+        <input type="text" value="Read Only" readonly />
+        <input type="text" value="Disabled" disabled />
+      </div>
+      <hr />
+      <div>
+        <form>
+          Text: <input type="text" /><br />
+          Email: <input type="email" /><br />
+          Date: <input type="date" /><br />
+          Range: <input type="range" min="0" max="100" /><br />
+          Color: <input type="color" />
+        </form>
+      </div>
+      <hr />
+      <div>
+        <form>
+          <fieldset>
+            <legend>Contact Info</legend>
+            <label>Name: <input type="text" /></label><br />
+            <label>Email: <input type="email" /></label>
+          </fieldset>
+        </form>
+      </div>
+      <hr />
+      <div>
+        <noscript>
+          <p>Your browser does not support JavaScript or it's disabled.</p>
+        </noscript>
+      </div>
+      <hr />
+      <div>
+        <embed
+          src="resume.pdf"
+          width="600"
+          height="400"
+          type="application/pdf"
+        />
+      </div>
+      <hr />
+      <div>
+        <button title="Govind's Submit Button and weare using the tooltip">
+          Submit
+        </button>
+      </div>
+      <hr />
+      <div>
+        <iframe
+          src="https://example.com"
+          sandbox
+          width="400"
+          height="200"
+        ></iframe>
+      </div>
+      <hr />
+      <div>
+        <h2>Using of the srcset and sizes for the responsive images</h2>
+        <img
+          src="assest/img/banner.jpg"
+          srcset="small.jpg 480w, medium.jpg 768w, large.jpg 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+          alt="Scenic view"
+        />
+      </div>
+      <hr />
+      <div>
+        <template id="card-template">
+          <div class="card">This is a card.</div>
+        </template>
+
+        <script>
+          const template = document.getElementById("card-template");
+          document.body.appendChild(template.content.cloneNode(true));
+        </script>
+      </div>
+      <hr />
+      <div>
+        <h2>Image lazy load!</h2>
+        <img src="assest/img/banner.jpg" loading="lazy" alt="Lazy image" />
+      </div>
+      <hr />
+      <div>
+        <h3>custom elements</h3>
+        <script>
+          class MyElement extends HTMLElement {
+            connectedCallback() {
+              this.innerHTML = "<strong>Hello Web Component</strong>";
+            }
+          }
+          customElements.define("my-element", MyElement);
+        </script>
+        <my-element></my-element>
+      </div>
+      <hr />
+      <div>
+        <p hidden>this is completely hidden</p>
+        <p aria-hidden="">this is visible but screen reeders ignore it.</p>
+      </div>
+    </section>
+  </body>
+</html>
