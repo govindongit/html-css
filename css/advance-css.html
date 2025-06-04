@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance CSS Practice</title>
+    <style>
+      button:hover::after {
+        content: " 👈 Click me!";
+        font-size: 0.9em;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">Advance CSS Practice</div>
+    <main>
+      <div class="outerCard"></div>
+      <div class="card">
+        <div class="qes">What is a pseudo-class in CSS?</div>
+        <div class="ans">
+          <pre>
+                ✅ Explanation:
+                Targets element state, like hover, visited.
+            </pre
+          >
+        </div>
+        <div class="example">
+          <pre>
+    button:hover::after {
+    content: " 👈 Click me!";
+    font-size: 0.9em;
+    color: gray;
+    }
+</pre
+          >
+          <button>Pseudo class and element example</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">What is a pseudo-element?</div>
+        <div class="ans">
+          <pre>
+                ✅ Explanation:
+                Targets part of an element (::before, ::after)
+            </pre
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">Combinators in CSS</div>
+        <div class="ans">
+          <pre>
+           Descendant           div p { color: blue; }                  <!-- All <p> inside <div> -->
+           Child                div > p { font-weight: bold; }          <!-- Only direct <p> children -->
+           Adjacent sibling     h2 + p { font-style: italic; }          <!-- First <p> after <h2> -->
+           General sibling      h2 ~ p { text-decoration: underline; }  <!-- All <p> after <h2> -->
+            </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">How to create a CSS animation?</div>
+        <div class="ans">
+          <pre>
+Step 1: Define the animation
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+Step 2: Apply the animation
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  animation-name: slideRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  <!--animation: slideRight 2s ease-in-out infinite alternate;-->
+}
+
+          </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">What is z-index in CSS?</div>
+        <div class="ans">
+          <pre>
+            Explanation:
+            Controls stacking order (higher z-index = on top)
+            </pre
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">Difference between inline, block, inline-block?</div>
+        <div>
+          <a href="https://codepen.io/govindongit/pen/myJOJaW">Check</a>
+        </div>
+        <div class="ans">
+          <pre>
+        Property	    inline	  block	  inline-block
+        New line?	    ❌ No	✅ Yes	❌ No
+        Width/Height?	❌ No	✅ Yes	✅ Yes
+        Box styling?	Limited	  Full	   Full
+            </pre
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">What is the use of calc() in CSS?</div>
+        <div class="ans">
+          <pre>
+        ✅ Explanation:
+        Performs calculations directly in CSS.
+        example: .box {
+                    position: absolute;
+                    left: calc(50% - 100px); <!-- 100px = half the box width -->
+                    width: 200px;
+                  }
+            </pre>
+        </div>
+        <div class="card">
+        <div class="qes">What is clamp() in CSS?</div>
+        <div><a href="https://codepen.io/govindongit/pen/WbvorjQ">link</a></div>
+        <div class="ans">
+          <pre>
+        ✅ Explanation:
+        Sets min, ideal, and max values for responsive sizing.
+            </pre>
+        </div>
+      </div>
+        <div class="card">
+        <div class="qes"> What are custom fonts and how to add them?</div>
+        <div class="ans">
+          <pre>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto');
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+            </pre>
+        </div>
+      </div>
+        <div class="card">
+        <div class="qes">make a sticky header</div>
+        <div class="ans">
+          <pre>
+        header {
+          position: sticky;
+          top: 0;
+          background: white;
+        }
+            </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">the difference between object-fit and background-size?</div>
+        <div><a href="https://codepen.io/govindongit/pen/OPVbNVX?editors=1000">link</a></div>
+        <div class="ans">
+          <pre>
+        Feature	     object-fit	                 background-size
+        Applies to	 for img and video element	 background-image on any element
+            </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">media query and its syntax?</div>
+        <div class="ans">
+          <pre>
+        @media (max-width:768px){
+        .menu { display:none; }
+        }
+            </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">What are mixins in CSS (using SCSS)?</div>
+        <div class="ans">
+          <pre>
+       ✅ Explanation:
+        Reusable code block in SCSS
+        SCSS Example:
+        @mixin flex-center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+            </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">What is the difference between CSS Grid and Flexbox</div>
+        <div><a href="https://codepen.io/govindongit/pen/OPVbXMQ">link</a></div>
+        <div class="ans">
+          <pre>
+            .flex-container{
+              display:flex;
+              gap:30px;
+            }
+            .grid-container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 10px;
+            }
+          </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="qes">What is the difference between CSS Grid and Flexbox</div>
+        <div class="ans">
+          <pre>
+          </pre>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
