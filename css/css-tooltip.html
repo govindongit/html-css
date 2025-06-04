@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip Using CSS and HTML</title>
+  </head>
+  <style>
+    .tooltip::after {
+      content: "Tooltip";
+      position: absolute;
+      background: black;
+      color: white;
+      padding: 5px;
+      visibility: hidden;
+    }
+    .tooltip:hover::after {
+      visibility: visible;
+    }
+    .buttoncard {
+      padding: 20px;
+    }
+
+    .animatebutton {
+      background: white;
+      color: black;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .animatebutton:hover {
+      background: gray;
+      color: red;
+      border-radius: 0px;
+    }
+  </style>
+  <body>
+    <div>
+      <div><h2>Tooltip usign the CSS</h2></div>
+      <button class="tooltip">Hover Over Me</button>
+
+      <div><h2>Tooltip usign the HTML</h2></div>
+      <button title="Tooltip">Hover Over Me</button>
+
+      <div class="buttoncard">
+        <button class="animatebutton">Hover Me</button>
+      </div>
+    </div>
+  </body>
+</html>
